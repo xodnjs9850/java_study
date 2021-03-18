@@ -50,20 +50,20 @@ public class Roulette {
                     count++;
                 }
             }
-//            System.out.println(Arrays.toString(bullet));
+            System.out.println(Arrays.toString(bullet));
 
             System.out.println("총을 돌렸습니다.");
             int rnmember = (int)(Math.random() * playerCount);
             System.out.printf("%s부터 시작합니다.\n", player[rnmember]);
 
-            while (rnmember < player.length) {
-
+            while (true) {
                 System.out.printf("%s의 턴 : 엔터를 누르면 격발합니다.\n", player[rnmember]);
                 sc.nextLine();
                 sc.nextLine();
                 if (bullet[rnmember]) {
                     System.out.printf("탕!!! %s가 죽었습니다.\n", player[rnmember]);
                     return;
+
                 } else {
                     System.out.println("운이 좋네요. 살았습니다.");
                     if (rnmember == player.length) {
@@ -74,6 +74,5 @@ public class Roulette {
                 }
             }
         }
-
     }
 }
