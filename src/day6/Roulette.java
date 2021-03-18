@@ -22,7 +22,7 @@ public class Roulette {
 
             // player 배열 초기화
             for (int i = 0; i < playerCount; i++) {
-                System.out.printf("%d번째 플레이어 이름을 등록하세요.\n", i+1);
+                System.out.printf("%d번째 플레이어 이름을 등록하세요.\n", i + 1);
                 System.out.print(">> ");
                 String playerName = sc.next();
                 player[i] = playerName;
@@ -50,26 +50,46 @@ public class Roulette {
                     count++;
                 }
             }
-            System.out.println(Arrays.toString(bullet));
 
             System.out.println("총을 돌렸습니다.");
-            int rnmember = (int)(Math.random() * playerCount);
+            int rnmember = (int) (Math.random() * playerCount);
             System.out.printf("%s부터 시작합니다.\n", player[rnmember]);
 
+//            System.out.println(bullet[0]);
+
+            int i = 0;
+
+            sc.nextLine();
             while (true) {
                 System.out.printf("%s의 턴 : 엔터를 누르면 격발합니다.\n", player[rnmember]);
                 sc.nextLine();
-                sc.nextLine();
+
+//                System.out.println(Arrays.toString(bullet));
+
                 if (bullet[rnmember]) {
                     System.out.printf("탕!!! %s가 죽었습니다.\n", player[rnmember]);
+
+                    int deleteData = rnmember;
+                    for (int n = deleteData; n < player.length - 1; n++) {
+                        player[n] = player[n + 1];
+                    }
+
+                    String[] temp = new String[player.length - 1];
+                    for (int x = 0; x < temp.length; x++) {
+                        temp[x] = player[x];
+                    }
+                    player = null;
+                    System.out.println(Arrays.toString(temp));
                     return;
 
                 } else {
                     System.out.println("운이 좋네요. 살았습니다.");
-                    if (rnmember == player.length) {
+
+                    System.out.println(Arrays.toString(player));
+                    rnmember++;
+
+                    if (rnmember >= playerCount) {
                         rnmember = 0;
-                    } else {
-                        rnmember++;
                     }
                 }
             }
