@@ -70,7 +70,6 @@ public class HRM {
                         System.out.print("부서를 입력하세요. > ");
                         String department = sc.next();
 
-<<<<<<< HEAD
 
 //                        for (int i = 0; i <= totalEmployee; i++) {
                             employees[totalEmployee][0] = employeeNumber;
@@ -82,7 +81,6 @@ public class HRM {
 //                        System.out.println(Arrays.deepToString(employees));
                         totalEmployee += 1;
 
-=======
                         for (int i = 0; i <= totalEmployee; i++) {
                             employees[totalEmployee][0] = employeeNumber;
                             employees[totalEmployee][1] = employeeName;
@@ -93,7 +91,6 @@ public class HRM {
 //                        System.out.println(Arrays.deepToString(employees));
                         totalEmployee += 1;
 
->>>>>>> dd3585352bcf5b06d5a799e5848c2a48be92a2e7
 //                        오류 발생시 해당 문구 출력 후 강제 종료
                     } catch (Exception e) {
                         System.out.println("잘못 입력 하였습니다.");
