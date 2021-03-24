@@ -37,6 +37,7 @@ public class PhoneMain {
         android.sendMessage(iphone, "vmlr vwdwrrrrrrrrrrrrr");
         iphone.checkMessages();
 
+        // git error
         /*Pone iphone = new Pone();
 
         // 객체의 속성과 기능을 참조 : 참조연산자 . 을 사용
