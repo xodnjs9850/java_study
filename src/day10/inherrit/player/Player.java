@@ -4,13 +4,14 @@ package day10.inherrit.player;
 public class Player {
 
     // 공통 필드
-    String nickName;
+    private String nickName;
     int level;
     int hp;
 
     // 생성자
     public Player(String nickName) {
-        System.out.println("Player 생성자 호출");
+//        System.out.println("Player 생성자 호출");
+        this.nickName = nickName;
         this.level = 1;
         this.hp = level * 50;
     }
@@ -20,11 +21,14 @@ public class Player {
         System.out.printf("%s님이 공격합니다.\n", this.nickName);
     }
 
-    void info() {
+    public void info() {
         System.out.println("=======================================");
         System.out.println("# 내 캐릭터명 : " + nickName);
         System.out.println("# 레벨 : " + level);
         System.out.println("# 체력 : " + hp);
     }
 
+    public String getNickName() {
+        return nickName;
+    }
 }
