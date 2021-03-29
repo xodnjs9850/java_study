@@ -55,7 +55,6 @@ public class Party {
             System.out.println("파티원을 찾을 수 없습니다.");
         }
 
-
     }
 
     //파티원 이름으로 인덱스 찾아주는 기능

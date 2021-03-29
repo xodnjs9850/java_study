@@ -14,7 +14,7 @@ public class Calculator {
     // 정적 데이터의 초기값을 세팅.
     static {
         System.out.println("정적 데이터 생성!!");
-
+        pi = 3.14;
     }
 
     // 메서드 내부에서 this 필드(인스턴스 필드)가 피요하면 non-static
