@@ -3,13 +3,28 @@ package day6;
 import java.util.*;
 
 public class RouletteAnswer {
+
+    private static Scanner sc = new Scanner(System.in);
+
+    public static int safeNextInt() {
+        int num = 0;
+        try {
+            num = sc.nextInt();
+            sc.nextLine();
+            return num;
+        } catch (InputMismatchException e) {
+            sc.nextLine();
+            System.out.println("정수로만 입력하세요.");
+            return 0;
+        }
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         System.out.print("게임 인원 (2 ~ 4명) ==> ");
 
         //총 참여인원 수
-        int playerNum = sc.nextInt();
+        int playerNum = safeNextInt();
 
         //인원 수의 범위가 적당한지 판단
         if (playerNum < 2 || playerNum > 4) {
@@ -30,7 +45,7 @@ public class RouletteAnswer {
         System.out.println(Arrays.toString(players) + " 참가!");
 
         System.out.print("\n실탄 개수를 입력 (6 미만) ==> ");
-        int bulletNum = sc.nextInt();
+        int bulletNum = safeNextInt();
         sc.nextLine(); // 위에서 발생한 nextInt의 \n을 처리하는 구문
 
         //탄창 배열을 만든다 (공간 6개)

@@ -1,0 +1,15 @@
+package day13.abs;
+
+public class Driver {
+
+    Car myCar;
+
+    public Driver(Car myCar) {
+        this.myCar = myCar;
+    }
+
+    public void drive() {
+        myCar.start();
+    }
+
+}
